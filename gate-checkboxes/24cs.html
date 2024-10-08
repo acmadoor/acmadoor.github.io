@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GATE 2025 Computer Science Syllabus</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .syllabus-section {
+            margin: 20px 0;
+            padding: 15px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #4CAF50;
+            margin-bottom: 10px;
+        }
+        label {
+            display: block;
+            font-size: 18px;
+            padding: 10px;
+            margin: 5px 0;
+            background-color: #e7f0fd;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        label:hover {
+            background-color: #d3e5ff;
+        }
+        input[type="checkbox"] {
+            margin-right: 10px;
+            transform: scale(1.2);
+        }
+        .completed {
+            text-decoration: line-through;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>GATE 2025 Computer Science Syllabus</h1>
+
+    <div class="syllabus-section" id="engineering-math-section">
+        <h2>Engineering Mathematics</h2>
+        <label>
+            <input type="checkbox" id="math1"> Discrete Mathematics: Propositional and first order logic, Sets, Relations, Functions
+        </label>
+        <label>
+            <input type="checkbox" id="math2"> Linear Algebra: Matrices, Determinants, Eigenvalues and Eigenvectors
+        </label>
+        <label>
+            <input type="checkbox" id="math3"> Calculus: Limits, Continuity, Differentiability, Integration
+        </label>
+        <label>
+            <input type="checkbox" id="math4"> Probability and Statistics: Random Variables, Probability Distributions
+        </label>
+    </div>
+
+    <div class="syllabus-section" id="digital-logic-section">
+        <h2>Digital Logic</h2>
+        <label>
+            <input type="checkbox" id="dl1"> Boolean Algebra, Combinational and Sequential Circuits
+        </label>
+        <label>
+            <input type="checkbox" id="dl2"> Minimization, Number Representations, Computer Arithmetic
+        </label>
+    </div>
+
+    <div class="syllabus-section" id="computer-organization-section">
+        <h2>Computer Organization and Architecture</h2>
+        <label>
+            <input type="checkbox" id="co1"> Machine Instructions and Addressing Modes
+        </label>
+        <label>
+            <input type="checkbox" id="co2"> ALU, Data-Path, Control Unit, Pipelining
+        </label>
+        <label>
+            <input type="checkbox" id="co3"> Memory Hierarchy: Cache, Main Memory, Secondary Storage
+        </label>
+    </div>
+
+    <div class="syllabus-section" id="programming-section">
+        <h2>Programming and Data Structures</h2>
+        <label>
+            <input type="checkbox" id="prog1"> Programming in C, Recursion
+        </label>
+        <label>
+            <input type="checkbox" id="prog2"> Data Structures: Arrays, Stacks, Queues, Linked Lists, Trees
+        </label>
+    </div>
+
+    <div class="syllabus-section" id="algorithms-section">
+        <h2>Algorithms</h2>
+        <label>
+            <input type="checkbox" id="algo1"> Searching, Sorting, Hashing
+        </label>
+        <label>
+            <input type="checkbox" id="algo2"> Graph Algorithms: Minimum Spanning Trees, Shortest Paths
+        </label>
+    </div>
+
+    <div class="syllabus-section" id="theory-section">
+        <h2>Theory of Computation</h2>
+        <label>
+            <input type="checkbox" id="toc1"> Regular Expressions, Finite Automata
+        </label>
+        <label>
+            <input type="checkbox" id="toc2"> Context-Free Grammars, Push-Down Automata
+        </label>
+    </div>
+
+    <div class="syllabus-section" id="compiler-design-section">
+        <h2>Compiler Design</h2>
+        <label>
+            <input type="checkbox" id="cd1"> Lexical Analysis, Parsing, Syntax-Directed Translation
+        </label>
+        <label>
+            <input type="checkbox" id="cd2"> Intermediate Code Generation, Data Flow Analysis
+        </label>
+    </div>
+
+    <div class="syllabus-section" id="os-section">
+        <h2>Operating System</h2>
+        <label>
+            <input type="checkbox" id="os1"> Processes, Threads, Inter-Process Communication
+        </label>
+        <label>
+            <input type="checkbox" id="os2"> Concurrency, Synchronization, Deadlock, CPU Scheduling
+        </label>
+    </div>
+
+    <div class="syllabus-section" id="dbms-section">
+        <h2>Databases</h2>
+        <label>
+            <input type="checkbox" id="dbms1"> ER-Model, Relational Model, SQL
+        </label>
+        <label>
+            <input type="checkbox" id="dbms2"> Integrity Constraints, Normal Forms
+        </label>
+        <label>
+            <input type="checkbox" id="dbms3"> File Organization, Indexing (B/B+ Trees)
+        </label>
+    </div>
+
+    <div class="syllabus-section" id="network-section">
+        <h2>Computer Networks</h2>
+        <label>
+            <input type="checkbox" id="net1"> OSI and TCP/IP Protocol Stacks, Packet, Circuit, and Virtual Circuit Switching
+        </label>
+        <label>
+            <input type="checkbox" id="net2"> Data Link Layer: Framing, Error Detection, MAC, Ethernet
+        </label>
+        <label>
+            <input type="checkbox" id="net3"> Network Layer: IP Addressing, IPv4, CIDR, NAT, Routing Protocols
+        </label>
+    </div>
+
+    <script>
+        // Function to load the checkbox state from localStorage
+        function loadCheckboxState() {
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            checkboxes.forEach(checkbox => {
+                const isChecked = localStorage.getItem(checkbox.id);
+                if (isChecked === 'true') {
+                    checkbox.checked = true;
+                    checkbox.parentElement.classList.add('completed');
+                }
+            });
+        }
+
+        // Function to save the checkbox state in localStorage
+        function saveCheckboxState() {
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            checkboxes.forEach(checkbox => {
+                localStorage.setItem(checkbox.id, checkbox.checked);
+                if (checkbox.checked) {
+                    checkbox.parentElement.classList.add('completed');
+                } else {
+                    checkbox.parentElement.classList.remove('completed');
+                }
+            });
+        }
+
+        // Load the checkbox state when the page loads
+        window.onload = loadCheckboxState;
+
+        // Save the checkbox state when any checkbox is clicked
+        document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+            checkbox.addEventListener('click', saveCheckboxState);
+        });
+    </script>
+</body>
+</html>
