@@ -23,67 +23,67 @@ header {
     font-size: 2.5rem;
 }
 
-.main-section {
+main {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 80vh;
-    padding: 20px;
 }
 
-.flex-container {
+.container {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
+
+.flex-grid {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-between;
+    gap: 20px;
     width: 100%;
 }
 
-.flex-item {
+.grid-item {
     background-color: #fff;
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    margin: 20px;
     padding: 20px;
     text-align: center;
-    width: 200px;
+    width: 45%; /* Responsive to allow 2 columns */
     height: 300px;
     position: relative;
     cursor: pointer;
     transition: transform 0.3s ease;
+    background-size: cover;
+    background-position: center;
+    color: white;
 }
 
-.flex-item:hover {
+.grid-item:hover {
     transform: scale(1.05);
 }
 
-.flex-item h2 {
+.grid-item h2 {
     font-size: 1.5rem;
-    color: #333;
     margin-bottom: 20px;
 }
 
-.flex-item #interns {
+.grid-item #interns {
     background-image: url('https://example.com/interns-bg.jpg'); /* Replace with your cartoon image */
-    background-size: cover;
-    color: white;
 }
 
-.flex-item #gate {
+.grid-item #gate {
     background-image: url('https://example.com/gate-bg.jpg'); /* Replace with your cartoon image */
-    background-size: cover;
-    color: white;
 }
 
-.flex-item #games {
+.grid-item #games {
     background-image: url('https://example.com/games-bg.jpg'); /* Replace with your cartoon image */
-    background-size: cover;
-    color: white;
 }
 
-.flex-item #science {
+.grid-item #science {
     background-image: url('https://example.com/science-bg.jpg'); /* Replace with your cartoon image */
-    background-size: cover;
-    color: white;
 }
 
 .dropdown-content {
@@ -122,13 +122,12 @@ footer {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .flex-container {
-        flex-direction: column;
-        align-items: center;
+    .grid-item {
+        width: 100%; /* Switch to one column on smaller screens */
+        height: auto;
     }
 
-    .flex-item {
-        width: 90%;
-        height: auto;
+    .flex-grid {
+        flex-direction: column;
     }
 }
