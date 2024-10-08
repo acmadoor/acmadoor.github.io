@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GATE 2025 Data Science and AI Syllabus</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .syllabus-section {
+            margin: 20px 0;
+            padding: 15px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #4CAF50;
+            margin-bottom: 10px;
+        }
+        label {
+            display: block;
+            font-size: 18px;
+            padding: 10px;
+            margin: 5px 0;
+            background-color: #e7f0fd;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        label:hover {
+            background-color: #d3e5ff;
+        }
+        input[type="checkbox"] {
+            margin-right: 10px;
+            transform: scale(1.2);
+        }
+        .completed {
+            text-decoration: line-through;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>GATE 2025 Data Science and AI Syllabus</h1>
+
+    <div class="syllabus-section" id="probability-section">
+        <h2>Probability and Statistics</h2>
+        <label>
+            <input type="checkbox" id="prob1"> Counting (Permutation and Combinations)
+        </label>
+        <label>
+            <input type="checkbox" id="prob2"> Probability Axioms, Sample Space, Events
+        </label>
+        <label>
+            <input type="checkbox" id="prob3"> Conditional and Joint Probability
+        </label>
+        <label>
+            <input type="checkbox" id="prob4"> Bayes Theorem
+        </label>
+        <label>
+            <input type="checkbox" id="prob5"> Mean, Median, Mode, Variance
+        </label>
+        <label>
+            <input type="checkbox" id="prob6"> Distributions: Bernoulli, Binomial, Normal, Poisson
+        </label>
+        <label>
+            <input type="checkbox" id="prob7"> Central Limit Theorem, Confidence Interval, z-test, t-test
+        </label>
+    </div>
+
+    <div class="syllabus-section" id="linear-algebra-section">
+        <h2>Linear Algebra</h2>
+        <label>
+            <input type="checkbox" id="lin1"> Vector Space, Subspaces
+        </label>
+        <label>
+            <input type="checkbox" id="lin2"> Matrices, Determinants, Rank, Eigenvalues
+        </label>
+        <label>
+            <input type="checkbox" id="lin3"> Projections, LU Decomposition, SVD
+        </label>
+    </div>
+
+    <div class="syllabus-section" id="calculus-section">
+        <h2>Calculus and Optimization</h2>
+        <label>
+            <input type="checkbox" id="cal1"> Functions of Single Variable, Limits, Continuity
+        </label>
+        <label>
+            <input type="checkbox" id="cal2"> Maxima, Minima, Taylor Series
+        </label>
+        <label>
+            <input type="checkbox" id="cal3"> Single Variable Optimization
+        </label>
+    </div>
+
+    <div class="syllabus-section" id="programming-section">
+        <h2>Programming, Data Structures and Algorithms</h2>
+        <label>
+            <input type="checkbox" id="prog1"> Programming in Python
+        </label>
+        <label>
+            <input type="checkbox" id="prog2"> Data Structures: Stacks, Queues, Trees
+        </label>
+        <label>
+            <input type="checkbox" id="prog3"> Sorting Algorithms: Bubble Sort, Quick Sort, Merge Sort
+        </label>
+        <label>
+            <input type="checkbox" id="prog4"> Graph Algorithms: Traversals, Shortest Path
+        </label>
+    </div>
+
+    <div class="syllabus-section" id="dbms-section">
+        <h2>Database Management and Warehousing</h2>
+        <label>
+            <input type="checkbox" id="dbms1"> ER-Model, Relational Algebra, SQL
+        </label>
+        <label>
+            <input type="checkbox" id="dbms2"> Integrity Constraints, Normalization
+        </label>
+        <label>
+            <input type="checkbox" id="dbms3"> Data Warehouse Modelling, Schema, Concept Hierarchies
+        </label>
+    </div>
+
+    <div class="syllabus-section" id="machine-learning-section">
+        <h2>Machine Learning</h2>
+        <label>
+            <input type="checkbox" id="ml1"> Supervised Learning: Regression, SVM, Decision Trees
+        </label>
+        <label>
+            <input type="checkbox" id="ml2"> Unsupervised Learning: Clustering, Dimensionality Reduction
+        </label>
+        <label>
+            <input type="checkbox" id="ml3"> Cross Validation, Bias-Variance Tradeoff
+        </label>
+    </div>
+
+    <div class="syllabus-section" id="ai-section">
+        <h2>Artificial Intelligence</h2>
+        <label>
+            <input type="checkbox" id="ai1"> Search: Informed, Uninformed, Adversarial
+        </label>
+        <label>
+            <input type="checkbox" id="ai2"> Logic: Propositional, Predicate
+        </label>
+        <label>
+            <input type="checkbox" id="ai3"> Reasoning Under Uncertainty
+        </label>
+    </div>
+
+    <script>
+        // Function to load the checkbox state from localStorage
+        function loadCheckboxState() {
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            checkboxes.forEach(checkbox => {
+                const isChecked = localStorage.getItem(checkbox.id);
+                if (isChecked === 'true') {
+                    checkbox.checked = true;
+                    checkbox.parentElement.classList.add('completed');
+                }
+            });
+        }
+
+        // Function to save the checkbox state in localStorage
+        function saveCheckboxState() {
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            checkboxes.forEach(checkbox => {
+                localStorage.setItem(checkbox.id, checkbox.checked);
+                if (checkbox.checked) {
+                    checkbox.parentElement.classList.add('completed');
+                } else {
+                    checkbox.parentElement.classList.remove('completed');
+                }
+            });
+        }
+
+        // Load the checkbox state when the page loads
+        window.onload = loadCheckboxState;
+
+        // Save the checkbox state when any checkbox is clicked
+        document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+            checkbox.addEventListener('click', saveCheckboxState);
+        });
+    </script>
+</body>
+</html>
