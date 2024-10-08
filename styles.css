@@ -71,19 +71,23 @@ main {
 }
 
 .grid-item #interns {
-    background-image: url('https://fastly.picsum.photos/id/1/200/300.jpg?hmac=jH5bDkLr6Tgy3oAg5khKCHeunZMHq0ehBZr6vGifPLY'); /* Replace with your cartoon image */
+    background-color: red
+/*     background-image: url('https://fastly.picsum.photos/id/1/200/300.jpg?hmac=jH5bDkLr6Tgy3oAg5khKCHeunZMHq0ehBZr6vGifPLY'); /* Replace with your cartoon image */ */
 }
 
 .grid-item #gate {
-    background-image: url('https://fastly.picsum.photos/id/1/200/300.jpg?hmac=jH5bDkLr6Tgy3oAg5khKCHeunZMHq0ehBZr6vGifPLY'); /* Replace with your cartoon image */
+    background-color: green
+/*     background-image: url('https://fastly.picsum.photos/id/1/200/300.jpg?hmac=jH5bDkLr6Tgy3oAg5khKCHeunZMHq0ehBZr6vGifPLY'); /* Replace with your cartoon image */ */
 }
 
 .grid-item #games {
-    background-image: url('https://fastly.picsum.photos/id/1/200/300.jpg?hmac=jH5bDkLr6Tgy3oAg5khKCHeunZMHq0ehBZr6vGifPLY'); /* Replace with your cartoon image */
+    background-color: blue
+/*     background-image: url('https://fastly.picsum.photos/id/1/200/300.jpg?hmac=jH5bDkLr6Tgy3oAg5khKCHeunZMHq0ehBZr6vGifPLY'); /* Replace with your cartoon image */ */
 }
 
 .grid-item #science {
-    background-image: url('https://fastly.picsum.photos/id/1/200/300.jpg?hmac=jH5bDkLr6Tgy3oAg5khKCHeunZMHq0ehBZr6vGifPLY'); /* Replace with your cartoon image */
+    background-color: yellow
+/*     background-image: url('https://fastly.picsum.photos/id/1/200/300.jpg?hmac=jH5bDkLr6Tgy3oAg5khKCHeunZMHq0ehBZr6vGifPLY'); /* Replace with your cartoon image */ */
 }
 
 .dropdown-content {
