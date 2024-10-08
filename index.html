@@ -9,54 +9,46 @@
 <body>
 
     <header>
-        <nav>
-            <div class="logo">
-                <h1>Acmadoor</h1>
-            </div>
-            <ul class="nav-links">
-                <li><a href="#">Home</a></li>
-                <li class="dropdown">
-                    <a href="#" class="dropbtn">Interns</a>
-                    <div class="dropdown-content">
-                        <a href="#">Summer Internships</a>
-                        <a href="#">Winter Internships</a>
-                        <a href="#">Full-time</a>
-                    </div>
-                </li>
-                <li class="dropdown">
-                    <a href="#" class="dropbtn">Gate Checklists</a>
-                    <div class="dropdown-content">
-                        <a href="cs.html">CS</a>
-                        <a href="da.html">DA</a>
-                        <a href="#">Civil</a>
-                        <a href="#">Mech</a>
-                    </div>
-                </li>
-                <li class="dropdown">
-                    <a href="#" class="dropbtn">Fun Games</a>
-                    <div class="dropdown-content">
-                        <a href="#">Puzzle Games</a>
-                        <a href="#">Strategy Games</a>
-                        <a href="#">Trivia</a>
-                    </div>
-                </li>
-                <li class="dropdown">
-                    <a href="#" class="dropbtn">Science Projects</a>
-                    <div class="dropdown-content">
-                        <a href="#">Space Science</a>
-                        <a href="#">Physics</a>
-                        <a href="#">Robotics</a>
-                    </div>
-                </li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </nav>
+        <div class="logo">
+            <h1>Acmadoor</h1>
+        </div>
     </header>
 
     <section class="main-section">
-        <div class="intro-text">
-            <h2>Welcome to Acmadoor!</h2>
-            <p>Explore internships, GATE checklists, fun games, science projects, and much more. Let your curiosity lead the way!</p>
+        <div class="flex-container">
+            <div class="flex-item" id="interns">
+                <h2>Interns</h2>
+                <div class="dropdown-content">
+                    <a href="#">Summer Internships</a>
+                    <a href="#">Winter Internships</a>
+                    <a href="#">Full-time</a>
+                </div>
+            </div>
+            <div class="flex-item" id="gate">
+                <h2>Gate Checklists</h2>
+                <div class="dropdown-content">
+                    <a href="cs.html">CS</a>
+                    <a href="da.html">DA</a>
+                    <a href="#">Civil</a>
+                    <a href="#">Mech</a>
+                </div>
+            </div>
+            <div class="flex-item" id="games">
+                <h2>Fun Games</h2>
+                <div class="dropdown-content">
+                    <a href="#">Puzzle Games</a>
+                    <a href="#">Strategy Games</a>
+                    <a href="#">Trivia</a>
+                </div>
+            </div>
+            <div class="flex-item" id="science">
+                <h2>Science Projects</h2>
+                <div class="dropdown-content">
+                    <a href="#">Space Science</a>
+                    <a href="#">Physics</a>
+                    <a href="#">Robotics</a>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -65,7 +57,14 @@
     </footer>
 
     <script>
-        // You can add JS logic here if needed
+        const flexItems = document.querySelectorAll('.flex-item');
+        flexItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const dropdown = item.querySelector('.dropdown-content');
+                dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+            });
+        });
     </script>
+
 </body>
 </html>
