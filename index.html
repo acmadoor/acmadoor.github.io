@@ -1,74 +1,187 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Acmadoor</title>
-    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <title>AcmaDoor</title>
+    <style>
+        @media (max-width: 768px) {
+        .mobile-ad {
+            height: 200px; /* Increase this value as needed */
+        }
+    }
+    </style>
 </head>
-<body>
 
-    <header>
-        <div class="logo">
-            <h1>Acmadoor</h1>
+<body class="bg-gray-100">
+    <!-- Header Section -->
+    <header class="bg-blue-500 text-white p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold">AcmaDoor</h1>
+            <nav class="hidden md:flex space-x-4">
+                <a href="#" class="hover:text-gray-200">Home</a>
+                <a href="#" class="hover:text-gray-200">Projects</a>
+                <a href="#" class="hover:text-gray-200">About</a>
+                <a href="#" class="hover:text-gray-200">Join Us</a>
+            </nav>
+            <div class="md:hidden">
+                <button id="hamburger" class="focus:outline-none" onclick="toggleNavbar()">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div id="mobileMenu" class="hidden md:hidden">
+            <nav class="flex flex-col space-y-2 p-4 bg-blue-400">
+                <a href="#" class="hover:text-gray-200">Home</a>
+                <a href="#" class="hover:text-gray-200">Projects</a>
+                <a href="#" class="hover:text-gray-200">About</a>
+                <a href="#" class="hover:text-gray-200">Join Us</a>
+            </nav>
         </div>
     </header>
 
-    <main>
-        <div class="container">
-            <!-- Flex grid of topics -->
-            <div class="flex-grid">
-                <div class="grid-item" id="interns">
-                    <h2>Interns</h2>
-                    <div class="dropdown-content">
-                        <a href="#">Summer Internships</a>
-                        <a href="#">Winter Internships</a>
-                        <a href="#">Full-time</a>
+    <!-- Main Content -->
+    <main class="container mx-auto p-4">
+        <div class="grid grid-cols-12 gap-6">
+            <!-- Left Ad Space -->
+            <div class="hidden lg:block col-span-2">
+                <div class="bg-gray-300 h-full p-4 rounded-lg">Left </div>
+            </div>
+
+            <!-- Content Area -->
+            <div class="col-span-12 lg:col-span-8 flex flex-col gap-4">
+                <!-- Mobile Ad 1 (between Interns and Gate Checklists in mobile view) -->
+                <!-- <div class="bg-gray-300 p-4 rounded-lg lg:hidden">Ad Space 1</div> -->
+
+                <!-- Interns Card -->
+                <div class="relative">
+                    <div class="bg-blue-100 p-4 shadow-md cursor-pointer" onclick="toggleDropdown('internDropdown');">
+                        <h3 class="text-xl font-semibold mb-2">Internsip opportunities</h3>
+                        <p class="text-gray-700">Explore internship opportunities.</p>
+                    </div>
+                    <div id="internDropdown" class="hidden bg-white shadow-md p-2 mt-2">
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-200" onclick="closeDropdowns('internDropdown')">Website Development</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-200" onclick="closeDropdowns('internDropdown')">Mobile Application Development</a>
                     </div>
                 </div>
-                <div class="grid-item" id="gate">
-                    <h2>Gate Checklists</h2>
-                    <div class="dropdown-content">
-                        <a href="cs.html">CS</a>
-                        <a href="da.html">DA</a>
-                        <a href="#">Civil</a>
-                        <a href="#">Mech</a>
+
+                <!-- Mobile Ad 2 (between Gate Checklists and Fun Games in mobile view) -->
+
+                <!-- Gate Checklists Card -->
+                <div class="relative">
+                    <div class="bg-green-100 p-4 shadow-md cursor-pointer" onclick="toggleDropdown('gateDropdown');">
+                        <h3 class="text-xl font-semibold mb-2">Gate checklists</h3>
+                        <p class="text-gray-700">Prepare for GATE exams with our curated lists.</p>
+                    </div>
+                    <div id="gateDropdown" class="hidden bg-white shadow-md p-2 mt-2">
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-200" onclick="closeDropdowns('gateDropdown')">AE - Aerospace Engineering</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-200" onclick="closeDropdowns('gateDropdown')">AG - Agricultural Engineering</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-200" onclick="closeDropdowns('gateDropdown')">AR - Architecture and Planning</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-200" onclick="closeDropdowns('gateDropdown')">BT - Biotechnology</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-200" onclick="closeDropdowns('gateDropdown')">CE - Civil Engineering</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-200" onclick="closeDropdowns('gateDropdown')">CH - Chemical Engineering</a>
+                        <a href="gate-checkboxes/24cs.html" class="block px-4 py-2 hover:bg-gray-200" onclick="closeDropdowns('gateDropdown')">CS - Computer Science and Information Technology</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-200" onclick="closeDropdowns('gateDropdown')">CY - Chemistry</a>
+                        <a href="gate-checkboxes/24da.html" class="block px-4 py-2 hover:bg-gray-200" onclick="closeDropdowns('gateDropdown')">DA - Data Science & Artificial Intelligence</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-200" onclick="closeDropdowns('gateDropdown')">EC - Electronics and Communication Engineering</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-200" onclick="closeDropdowns('gateDropdown')">EE - Electrical Engineering</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-200" onclick="closeDropdowns('gateDropdown')">EY - Ecology and Evolution</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-200" onclick="closeDropdowns('gateDropdown')">GG - Geology and Geophysics</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-200" onclick="closeDropdowns('gateDropdown')">IN - Instrumentation Engineering</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-200" onclick="closeDropdowns('gateDropdown')">MA - Mathematics</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-200" onclick="closeDropdowns('gateDropdown')">ME - Mechanical Engineering</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-200" onclick="closeDropdowns('gateDropdown')">MN - Mining Engineering</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-200" onclick="closeDropdowns('gateDropdown')">MT - Metallurgical Engineering</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-200" onclick="closeDropdowns('gateDropdown')">PE - Petroleum Engineering</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-200" onclick="closeDropdowns('gateDropdown')">PH - Physics</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-200" onclick="closeDropdowns('gateDropdown')">PI - Production and Industrial Engineering</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-200" onclick="closeDropdowns('gateDropdown')">ST - Statistics</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-200" onclick="closeDropdowns('gateDropdown')">TF - Textile Engineering and Fibre Science</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-200" onclick="closeDropdowns('gateDropdown')">XE - Engineering Sciences</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-200" onclick="closeDropdowns('gateDropdown')">XH - Humanities and Social Sciences</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-200" onclick="closeDropdowns('gateDropdown')">ES - Environmental Science and Engineering</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-200" onclick="closeDropdowns('gateDropdown')">XL - Life Sciences</a>
                     </div>
                 </div>
-                <div class="grid-item" id="games">
-                    <h2>Fun Games</h2>
-                    <div class="dropdown-content">
-                        <a href="#">Puzzle Games</a>
-                        <a href="#">Strategy Games</a>
-                        <a href="#">Trivia</a>
+
+                <div class="bg-gray-300 p-4 rounded-lg lg:hidden mobile-ad">Space 1</div>
+
+                
+
+                <!-- Science Projects Card -->
+                <div class="relative">
+                    <div class="bg-red-100 p-4 shadow-md cursor-pointer" onclick="toggleDropdown('scienceProjectsDropdown');">
+                        <h3 class="text-xl font-semibold mb-2">School / College Projects</h3>
+                        <p class="text-gray-700">Explore fascinating science projects.</p>
+                    </div>
+                    <div id="scienceProjectsDropdown" class="hidden bg-white shadow-md p-2 mt-2">
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-200" onclick="closeDropdowns('scienceProjectsDropdown')">Project 1</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-200" onclick="closeDropdowns('scienceProjectsDropdown')">Project 2</a>
                     </div>
                 </div>
-                <div class="grid-item" id="science">
-                    <h2>Science Projects</h2>
-                    <div class="dropdown-content">
-                        <a href="#">Space Science</a>
-                        <a href="#">Physics</a>
-                        <a href="#">Robotics</a>
+
+                <!-- Mobile Ad 3 (between Fun Games and Science Projects in mobile view) -->
+                <div class="bg-gray-300 p-4 rounded-lg lg:hidden mobile-ad">Space 2</div>
+
+
+                <!-- Fun Games Card -->
+                <div class="relative">
+                    <div class="bg-yellow-100 p-4 shadow-md cursor-pointer" onclick="toggleDropdown('funGamesDropdown');">
+                        <h3 class="text-xl font-semibold mb-2">Fun Games</h3>
+                        <p class="text-gray-700">Play engaging and fun games here.</p>
+                    </div>
+                    <div id="funGamesDropdown" class="hidden bg-white shadow-md p-2 mt-2">
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-200" onclick="closeDropdowns('funGamesDropdown')">Game 1</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-200" onclick="closeDropdowns('funGamesDropdown')">Game 2</a>
                     </div>
                 </div>
+                <div class="bg-gray-300 p-4 rounded-lg lg:hidden mobile-ad">Space 3</div>
+
+
+
+            </div>
+
+            <!-- Right Ad Space -->
+            <div class="hidden lg:block col-span-2">
+                <div class="bg-gray-300 h-full p-4 rounded-lg">Right</div>
             </div>
         </div>
     </main>
 
-    <footer>
-        <p>&copy; 2024 Acmadoor. All rights reserved.</p>
+    <!-- Footer Section -->
+    <footer class="bg-blue-500 text-white text-center p-4 mt-6">
+        <p>&copy; 2024 AcmaDoor. All Rights Reserved.</p>
     </footer>
 
     <script>
-        // Script to toggle dropdown content visibility when a grid item is clicked
-        const gridItems = document.querySelectorAll('.grid-item');
-        gridItems.forEach(item => {
-            item.addEventListener('click', () => {
-                const dropdown = item.querySelector('.dropdown-content');
-                dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+        // Dropdown Toggle Function
+        function toggleDropdown(id) {
+            const dropdowns = ['internDropdown', 'gateDropdown', 'funGamesDropdown', 'scienceProjectsDropdown'];
+            dropdowns.forEach(dropdown => {
+                if (dropdown !== id) {
+                    document.getElementById(dropdown).classList.add("hidden");
+                }
             });
-        });
-    </script>
+            const dropdownElement = document.getElementById(id);
+            dropdownElement.classList.toggle("hidden");
+        }
 
+        // Close dropdowns when clicking on specific item
+        function closeDropdowns(id) {
+            document.getElementById(id).classList.add("hidden");
+        }
+
+        // Toggle mobile navbar
+        function toggleNavbar() {
+            const mobileMenu = document.getElementById("mobileMenu");
+            mobileMenu.classList.toggle("hidden");
+        }
+    </script>
 </body>
+
 </html>
+
